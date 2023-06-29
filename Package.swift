@@ -5,6 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftyCIImageProperties",
+    platforms: [
+        .iOS("13.1"),
+        .watchOS(.v6),
+        .macOS(.v10_15),
+        .macCatalyst("13.1"),
+        .tvOS(.v13),
+    ],
     products: [
         .library(
             name: "SwiftyCIImageProperties",
