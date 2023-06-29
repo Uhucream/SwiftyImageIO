@@ -23,11 +23,16 @@ let package = Package(
             url: "https://github.com/almazrafi/DictionaryCoder.git",
             from: "1.1.0"
         ),
+        .package(
+            url: "https://github.com/Flight-School/AnyCodable",
+            from: "0.6.7"
+        ),
     ],
     targets: [
         .target(
             name: "SwiftyCIImageProperties",
             dependencies: [
+                .product(name: "AnyCodable", package: "AnyCodable"),
                 .product(name: "DictionaryCoder", package: "DictionaryCoder"),
             ]
         ),
