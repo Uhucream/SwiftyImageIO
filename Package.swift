@@ -15,10 +15,14 @@ let package = Package(
     products: [
         .library(
             name: "SwiftyCIImageProperties",
-            targets: ["SwiftyCIImageProperties"]),
+            targets: ["SwiftyCIImageProperties"]
+        ),
     ],
     dependencies: [
-        .package(url: "https://github.com/almazrafi/DictionaryCoder.git", from: "1.1.0")
+        .package(
+            url: "https://github.com/almazrafi/DictionaryCoder.git",
+            from: "1.1.0"
+        ),
     ],
     targets: [
         .target(
