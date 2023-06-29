@@ -26,7 +26,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftyCIImageProperties"
+            name: "SwiftyCIImageProperties",
+            dependencies: [
+                .product(name: "DictionaryCoder", package: "DictionaryCoder"),
+            ]
         ),
         .testTarget(
             name: "SwiftyCIImagePropertiesTests",
