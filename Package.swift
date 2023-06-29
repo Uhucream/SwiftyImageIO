@@ -18,7 +18,7 @@ let package = Package(
             targets: ["SwiftyCIImageProperties"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swhitty/DictionaryDecoder", .upToNextMajor(from: "0.22.0"))
+        .package(url: "https://github.com/almazrafi/DictionaryCoder.git", from: "1.1.0")
     ],
     targets: [
         .target(
