@@ -15,9 +15,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftyCIImageProperties"),
+            name: "SwiftyCIImageProperties"
+        ),
         .testTarget(
             name: "SwiftyCIImagePropertiesTests",
-            dependencies: ["SwiftyCIImageProperties"]),
+            dependencies: ["SwiftyCIImageProperties"]
+        ),
     ]
 )
