@@ -15,6 +15,9 @@ public struct ImageIOProperties: Codable, Equatable, Hashable {
     /// Exchangeable Image File Format (EXIF) data.
     public var exif: ExifProperty?
     
+    /// Global Positioning System (GPS) information.
+    public var gps: GPSProperty?
+    
     //  MARK: - Container File Size
     
     /// The size of the image file in bytes, if known.
