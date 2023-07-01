@@ -34,7 +34,7 @@ public struct ImageIOProperties: Codable, Equatable, Hashable {
     public var thumbnailImages: AnyCodable?
     
     /// The index of the primary image in the file.
-    public var primaryImage: Bool?
+    public var primaryImage: Int?
     
     /// A Boolean value that indicates whether the image contains floating-point pixel samples.
     public var isFloat: Bool?
