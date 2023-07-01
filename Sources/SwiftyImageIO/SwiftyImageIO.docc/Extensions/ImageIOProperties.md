@@ -5,6 +5,7 @@
 ### Common Image Properties
 
 - ``SwiftyImageIO/ImageIOProperties/exif``
+- ``SwiftyImageIO/ImageIOProperties/gps``
 
 ### Container File Size
 - ``SwiftyImageIO/ImageIOProperties/fileSize``
