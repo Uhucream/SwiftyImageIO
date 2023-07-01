@@ -10,6 +10,7 @@ import AnyCodable
 import Foundation
 import ImageIO
 
+/// Exchangeable Image File Format (EXIF) data.
 public struct ExifProperty: Codable, Equatable, Hashable {
     //  MARK: - Camera Settings
     
