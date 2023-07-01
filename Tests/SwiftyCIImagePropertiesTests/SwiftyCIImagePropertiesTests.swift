@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftyCIImageProperties
+@testable import SwiftyImageIO
 
 final class SwiftyCIImagePropertiesTests: XCTestCase {
     func testExample() throws {

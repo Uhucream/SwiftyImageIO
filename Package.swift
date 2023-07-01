@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftyCIImageProperties",
+    name: "SwiftyImageIO",
     platforms: [
         .iOS("13.1"),
         .watchOS(.v6),
@@ -14,8 +14,8 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SwiftyCIImageProperties",
-            targets: ["SwiftyCIImageProperties"]
+            name: "SwiftyImageIO",
+            targets: ["SwiftyImageIO"]
         ),
     ],
     dependencies: [
@@ -30,15 +30,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftyCIImageProperties",
+            name: "SwiftyImageIO",
             dependencies: [
                 .product(name: "AnyCodable", package: "AnyCodable"),
                 .product(name: "DictionaryCoder", package: "DictionaryCoder"),
             ]
         ),
         .testTarget(
-            name: "SwiftyCIImagePropertiesTests",
-            dependencies: ["SwiftyCIImageProperties"]
+            name: "SwiftyImageIOTests",
+            dependencies: ["SwiftyImageIO"]
         ),
     ]
 )
