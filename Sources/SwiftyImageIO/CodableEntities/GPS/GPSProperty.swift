@@ -9,6 +9,7 @@
 import AnyCodable
 import Foundation
 
+/// Global Positioning System (GPS) information.
 public struct GPSProperty: Codable, Equatable, Hashable {
     //  MARK: - GPS Coordinate
     
