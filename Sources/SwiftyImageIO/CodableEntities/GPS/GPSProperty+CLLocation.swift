@@ -62,8 +62,8 @@ public extension GPSProperty {
             
             return location
         }
-
-        guard let speed else {
+        
+        guard let speed, let speedRef else {
             let location: CLLocation = .init(
                 coordinate: CLLocationCoordinate2D(
                     latitude: signedLatitude,
@@ -80,6 +80,24 @@ public extension GPSProperty {
             return location
         }
         
+        var measurementSpeedUnit: UnitSpeed {
+            switch speedRef {
+            case .kilometerPerHour:
+                return .kilometersPerHour
+            case .knots:
+                return .knots
+            case .milePerHour:
+                return .milesPerHour
+            }
+        }
+        
+        let measurementSpeed: Measurement<UnitSpeed> = .init(
+            value: speed,
+            unit: measurementSpeedUnit
+        )
+        
+        let metersPerSecondSpeed: Measurement<UnitSpeed> = measurementSpeed.converted(to: .metersPerSecond)
+        
         let location: CLLocation = .init(
             coordinate: CLLocationCoordinate2D(
                 latitude: signedLatitude,
@@ -89,7 +107,7 @@ public extension GPSProperty {
             horizontalAccuracy: hPositioningError ?? clLocationDefaultAccuracyValue,
             verticalAccuracy: clLocationDefaultAccuracyValue,
             course: imageDirection,
-            speed: speed,
+            speed: metersPerSecondSpeed.value,
             timestamp: dateTime ?? .distantPast
         )
         
