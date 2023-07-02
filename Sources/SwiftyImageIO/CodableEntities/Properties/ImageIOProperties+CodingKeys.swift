@@ -13,6 +13,8 @@ extension ImageIOProperties {
     enum CodingKeys: String, CodingKey {
         case exif
         
+        case gps
+
         //  MARK: - Container File Size
         case fileSize
         
@@ -51,6 +53,9 @@ extension ImageIOProperties {
             switch self {
             case .exif:
                 return kCGImagePropertyExifDictionary
+                
+            case .gps:
+                return kCGImagePropertyGPSDictionary
                 
             case .fileSize:
                 return kCGImagePropertyFileSize
