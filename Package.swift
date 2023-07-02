@@ -27,6 +27,10 @@ let package = Package(
             url: "https://github.com/Flight-School/AnyCodable",
             from: "0.6.7"
         ),
+        .package(
+            url: "https://github.com/apple/swift-docc-plugin",
+            from: "1.1.0"
+        ),
     ],
     targets: [
         .target(
