@@ -244,7 +244,7 @@ public struct ExifProperty: Codable, Equatable, Hashable {
     //  MARK: - Flash Information
     
     /// The FlashPix version supported by an FPXR file.
-    public var flashpixVersion: String?
+    public var flashpixVersion: [Int]?
     
     /// The strobe energy when the image was captured, in beam candle power seconds.
     public var flashEnergy: Int?
