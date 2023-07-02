@@ -15,6 +15,10 @@ extension ImageIOProperties {
         case exif
         
         case gps
+        
+        //  MARK: - Format-Specific Properties
+        
+        case tiff
 
         //  MARK: - Container File Size
         case fileSize
@@ -57,6 +61,9 @@ extension ImageIOProperties {
                 
             case .gps:
                 return kCGImagePropertyGPSDictionary
+                
+            case .tiff:
+                return kCGImagePropertyTIFFDictionary
                 
             case .fileSize:
                 return kCGImagePropertyFileSize
