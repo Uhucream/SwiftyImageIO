@@ -23,3 +23,35 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test
       run: swift test -v
+
+  doc:
+    runs-on: macos-13
+    steps:
+    - uses: actions/checkout@v2
+    - name: build DocC
+      run: |
+        swift package --allow-writing-to-directory ./docs generate-documentation \
+          --target "SwiftyImageIO" \
+          --disable-indexing \
+          --output-path ./docs \
+          --transform-for-static-hosting \
+          --hosting-base-path "SwiftyImageIO"
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs
+
+  deploy-doc:
+    needs: doc
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: macos-13
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+
