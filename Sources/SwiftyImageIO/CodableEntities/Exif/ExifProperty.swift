@@ -182,7 +182,7 @@ public struct ExifProperty: Codable, Equatable, Hashable {
     public var componentsConfiguration: [Int]?
     
     /// The number of images that make up a composite image.
-    public var sourceImageNumberOfCompositeImage: UInt?
+    public var sourceImageNumberOfCompositeImage: [Int]?
     
     /// The image source.
     public var fileSource: FileSourceType?
