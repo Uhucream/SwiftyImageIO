@@ -29,7 +29,12 @@ public extension GPSProperty {
             return longitudeRef == .east ? unsignedLongitude : -unsignedLongitude
         }
         
-        guard let unsignedAltitude = altitude else { return nil }
+        guard let unsignedAltitude = altitude else {
+            return .init(
+                latitude: signedLatitude,
+                longitude: signedLongitude
+            )
+        }
         
         var signedAltitude: Double {
             guard let altitudeRef else { return unsignedAltitude }
@@ -37,13 +42,42 @@ public extension GPSProperty {
             return altitudeRef == .aboveSeaLevel ? unsignedAltitude : -unsignedAltitude
         }
         
-        guard let imageDirection else { return nil }
-        guard let speed else { return nil }
-        
         var dateTime: Date? {
             guard let dateStamp else { return .distantPast }
             
             return DateFormatter.tiff.date(from: "\(dateStamp) \(timeStamp ?? "00:00:00")")
+        }
+        
+        guard let imageDirection else {
+            let location: CLLocation = .init(
+                coordinate: CLLocationCoordinate2D(
+                    latitude: signedLatitude,
+                    longitude: signedLongitude
+                ),
+                altitude: signedAltitude,
+                horizontalAccuracy: hPositioningError ?? clLocationDefaultAccuracyValue,
+                verticalAccuracy: clLocationDefaultAccuracyValue,
+                timestamp: dateTime ?? .distantPast
+            )
+            
+            return location
+        }
+
+        guard let speed else {
+            let location: CLLocation = .init(
+                coordinate: CLLocationCoordinate2D(
+                    latitude: signedLatitude,
+                    longitude: signedLongitude
+                ),
+                altitude: signedAltitude,
+                horizontalAccuracy: hPositioningError ?? clLocationDefaultAccuracyValue,
+                verticalAccuracy: clLocationDefaultAccuracyValue,
+                course: imageDirection,
+                speed: 0,
+                timestamp: dateTime ?? .distantPast
+            )
+            
+            return location
         }
         
         let location: CLLocation = .init(
