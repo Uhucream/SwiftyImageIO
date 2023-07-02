@@ -15,3 +15,5 @@ The SwiftyImageIO allows applications to modify `CIImage.properties` in a type-s
 - ``SwiftyImageIO/GPSProperty``
 
 ### Format-Specific Properties
+
+- ``SwiftyImageIO/TIFFProperty``

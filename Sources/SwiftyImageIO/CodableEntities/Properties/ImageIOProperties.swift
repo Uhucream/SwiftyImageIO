@@ -20,6 +20,11 @@ public struct ImageIOProperties: Codable, Equatable, Hashable {
     /// Global Positioning System (GPS) information.
     public var gps: GPSProperty?
     
+    //  MARK: - Format-Specific Properties
+    
+    /// the Tagged Image File Format (TIFF).
+    public var tiff: TIFFProperty?
+    
     //  MARK: - Container File Size
     
     /// The size of the image file in bytes, if known.

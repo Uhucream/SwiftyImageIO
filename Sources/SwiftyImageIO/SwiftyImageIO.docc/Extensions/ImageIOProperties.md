@@ -7,6 +7,10 @@
 - ``SwiftyImageIO/ImageIOProperties/exif``
 - ``SwiftyImageIO/ImageIOProperties/gps``
 
+### Format-Specific Properties
+
+- ``SwiftyImageIO/ImageIOProperties/tiff``
+
 ### Container File Size
 - ``SwiftyImageIO/ImageIOProperties/fileSize``
 
