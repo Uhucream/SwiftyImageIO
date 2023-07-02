@@ -11,6 +11,7 @@ import ImageIO
 
 extension ImageIOProperties {
     enum CodingKeys: String, CodingKey {
+        //  MARK: - Common Image Properties
         case exif
         
         case gps

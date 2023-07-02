@@ -12,6 +12,8 @@ import ImageIO
 
 /// Properties that apply to the container in general, and not necessarily to an individual image in the container.
 public struct ImageIOProperties: Codable, Equatable, Hashable {
+    //  MARK: - Common Image Properties
+    
     /// Exchangeable Image File Format (EXIF) data.
     public var exif: ExifProperty?
     
