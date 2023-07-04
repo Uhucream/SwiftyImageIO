@@ -11,7 +11,11 @@ import Foundation
 import ImageIO
 
 /// Properties that apply to the container in general, and not necessarily to an individual image in the container.
-public struct ImageIOProperties: Codable, Equatable, Hashable {
+public struct ImageIOProperties: Codable, Identifiable {
+    public var id: UUID {
+        return .init()
+    }
+    
     //  MARK: - Common Image Properties
     
     /// Exchangeable Image File Format (EXIF) data.
