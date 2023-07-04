@@ -15,12 +15,12 @@ public extension MakerAppleProperty {
             return .init()
         }
         
-        let epoch: Int?
+        public let epoch: Int?
         
-        let flags: Int?
+        public let flags: Int?
         
-        let timescale: Int?
+        public let timescale: Int?
         
-        let value: Int?
+        public let value: Int?
     }
 }
