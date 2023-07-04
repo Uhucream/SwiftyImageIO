@@ -20,6 +20,9 @@ extension ImageIOProperties {
         
         case tiff
 
+        //  MARK: - Manufacturer-Specific Properties
+        case makerApple
+        
         //  MARK: - Container File Size
         case fileSize
         
@@ -65,6 +68,9 @@ extension ImageIOProperties {
             case .tiff:
                 return kCGImagePropertyTIFFDictionary
                 
+            case .makerApple:
+                return kCGImagePropertyMakerAppleDictionary
+
             case .fileSize:
                 return kCGImagePropertyFileSize
                 

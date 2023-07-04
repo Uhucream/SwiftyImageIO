@@ -29,6 +29,11 @@ public struct ImageIOProperties: Codable, Identifiable {
     /// the Tagged Image File Format (TIFF).
     public var tiff: TIFFProperty?
     
+    //  MARK: - Manufacturer-Specific Properties
+
+    /// Metadata for an image from an Apple camera.
+    public let makerApple: MakerAppleProperty?
+    
     //  MARK: - Container File Size
     
     /// The size of the image file in bytes, if known.
