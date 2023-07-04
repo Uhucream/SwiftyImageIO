@@ -9,6 +9,7 @@
 import Foundation
 import AnyCodable
 
+/// Metadata for an image from an Apple camera.
 public struct MakerAppleProperty: Codable, Identifiable {
     public var id: UUID {
         return .init()

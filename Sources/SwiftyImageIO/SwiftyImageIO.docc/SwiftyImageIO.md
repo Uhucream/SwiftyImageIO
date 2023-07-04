@@ -17,3 +17,7 @@ The SwiftyImageIO allows applications to modify `CIImage.properties` in a type-s
 ### Format-Specific Properties
 
 - ``SwiftyImageIO/TIFFProperty``
+
+### Manufacturer-Specific Properties
+
+- ``SwiftyImageIO/MakerAppleProperty``

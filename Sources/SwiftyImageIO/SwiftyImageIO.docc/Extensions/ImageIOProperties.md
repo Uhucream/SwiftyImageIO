@@ -11,6 +11,10 @@
 
 - ``SwiftyImageIO/ImageIOProperties/tiff``
 
+### Manufacturer-Specific Properties
+
+- ``SwiftyImageIO/ImageIOProperties/makerApple``
+
 ### Container File Size
 - ``SwiftyImageIO/ImageIOProperties/fileSize``
 
