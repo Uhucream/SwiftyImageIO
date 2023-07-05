@@ -52,6 +52,26 @@ extension MakerAppleProperty {
         case semanticStylePreset
         case frontFacingCamera
         
+        case unkown_rawValue_13
+        case unkown_rawValue_14
+        case unkown_rawValue_16
+        case unkown_rawValue_31
+        case unkown_rawValue_35
+        case unkown_rawValue_40
+        case unkown_rawValue_43
+        case unkown_rawValue_45
+        case unkown_rawValue_46
+        case unkown_rawValue_51
+        case unkown_rawValue_52
+        case unkown_rawValue_53
+        case unkown_rawValue_54
+        case unkown_rawValue_55
+        case unkown_rawValue_57
+        case unkown_rawValue_58
+        case unkown_rawValue_59
+        case unkown_rawValue_60
+        case unkown_rawValue_74
+        
         var rawValue: String {
             return .init(rawValueInt)
         }
@@ -162,6 +182,45 @@ extension MakerAppleProperty {
                 
             case .frontFacingCamera:
                 return 0x0045
+                
+            case .unkown_rawValue_13:
+                return 0x000d
+            case .unkown_rawValue_14:
+                return 0x000e
+            case .unkown_rawValue_16:
+                return 0x0010
+            case .unkown_rawValue_31:
+                return 0x001f
+            case .unkown_rawValue_35:
+                return 0x0023
+            case .unkown_rawValue_40:
+                return 0x0028
+            case .unkown_rawValue_43:
+                return 0x002b
+            case .unkown_rawValue_45:
+                return 0x002d
+            case .unkown_rawValue_46:
+                return 0x002e
+            case .unkown_rawValue_51:
+                return 0x0033
+            case .unkown_rawValue_52:
+                return 0x0034
+            case .unkown_rawValue_53:
+                return 0x0035
+            case .unkown_rawValue_54:
+                return 0x0036
+            case .unkown_rawValue_55:
+                return 0x0037
+            case .unkown_rawValue_57:
+                return 0x0039
+            case .unkown_rawValue_58:
+                return 0x003a
+            case .unkown_rawValue_59:
+                return 0x003b
+            case .unkown_rawValue_60:
+                return 0x003c
+            case .unkown_rawValue_74:
+                return 0x004a
             }
         }
     }

@@ -86,4 +86,26 @@ public struct MakerAppleProperty: Codable, Identifiable {
     public let semanticStylePreset: Int?
 
     public let frontFacingCamera: Bool?
+    
+    // MARK: - Unknown properties
+    
+    let unkown_rawValue_13: Int?
+    let unkown_rawValue_14: Int?
+    let unkown_rawValue_16: Int?
+    let unkown_rawValue_31: Int?
+    let unkown_rawValue_35: [Int]?
+    let unkown_rawValue_40: Int?
+    let unkown_rawValue_43: String?
+    let unkown_rawValue_45: Int?
+    let unkown_rawValue_46: Int?
+    let unkown_rawValue_51: Int?
+    let unkown_rawValue_52: Int?
+    let unkown_rawValue_53: Int?
+    let unkown_rawValue_54: Int?
+    let unkown_rawValue_55: Int?
+    let unkown_rawValue_57: Int?
+    let unkown_rawValue_58: Int?
+    let unkown_rawValue_59: Int?
+    let unkown_rawValue_60: Int?
+    let unkown_rawValue_74: Int?
 }

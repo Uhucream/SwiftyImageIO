@@ -97,5 +97,45 @@ public extension MakerAppleProperty {
         self.semanticStylePreset = try container.decodeIfPresent(Int.self, forKey: .semanticStylePreset)
         
         self.frontFacingCamera = try container.decodeIfPresent(Bool.self, forKey: .frontFacingCamera)
+
+        // FIXME: - Unknown name properies
+
+        self.unkown_rawValue_13 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_13)
+        
+        self.unkown_rawValue_14 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_14)
+        
+        self.unkown_rawValue_16 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_16)
+        
+        self.unkown_rawValue_31 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_31)
+        
+        self.unkown_rawValue_35 = try container.decodeIfPresent([Int].self, forKey: .unkown_rawValue_35)
+        
+        self.unkown_rawValue_40 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_40)
+        
+        self.unkown_rawValue_43 = try container.decodeIfPresent(String.self, forKey: .unkown_rawValue_43)
+        
+        self.unkown_rawValue_45 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_45)
+        
+        self.unkown_rawValue_46 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_46)
+        
+        self.unkown_rawValue_51 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_51)
+        
+        self.unkown_rawValue_52 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_52)
+        
+        self.unkown_rawValue_53 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_53)
+        
+        self.unkown_rawValue_54 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_54)
+        
+        self.unkown_rawValue_55 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_55)
+        
+        self.unkown_rawValue_57 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_57)
+        
+        self.unkown_rawValue_58 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_58)
+        
+        self.unkown_rawValue_59 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_59)
+        
+        self.unkown_rawValue_60 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_60)
+        
+        self.unkown_rawValue_74 = try container.decodeIfPresent(Int.self, forKey: .unkown_rawValue_74)
     }
 }
