@@ -75,4 +75,29 @@ public struct TIFFProperty: Codable, Equatable, Hashable {
     
     /// The computer or operating system used when the image was created.
     public var hostComputer: String?
+    
+    init?(dictionary: Any?) {
+        guard let dictionary = dictionary as? [String : Any] else { return nil }
+
+        self.compression = dictionary[kCGImagePropertyTIFFCompression as String] as? CompressionType
+        self.photometricInterpretation = dictionary[kCGImagePropertyTIFFPhotometricInterpretation as String] as? AnyCodable
+        self.transferFunction = dictionary[kCGImagePropertyTIFFTransferFunction as String] as? AnyCodable
+        self.orientation = dictionary[kCGImagePropertyTIFFOrientation as String] as? CGImagePropertyOrientation
+        self.resolutionX = dictionary[kCGImagePropertyTIFFXResolution as String] as? Int
+        self.resolutionY = dictionary[kCGImagePropertyTIFFYResolution as String] as? Int
+        self.resolutionUnit = dictionary[kCGImagePropertyTIFFResolutionUnit as String] as? ResolutionUnit
+        self.whitePoint = dictionary[kCGImagePropertyTIFFWhitePoint as String] as? AnyCodable
+        self.primaryChromaticities = dictionary[kCGImagePropertyTIFFPrimaryChromaticities as String] as? AnyCodable
+        self.tileLength = dictionary[kCGImagePropertyTIFFTileLength as String] as? Int
+        self.tileWidth = dictionary[kCGImagePropertyTIFFTileWidth as String] as? Int
+        self.documentName = dictionary[kCGImagePropertyTIFFDocumentName as String] as? String
+        self.imageDescription = dictionary[kCGImagePropertyTIFFImageDescription as String] as? String
+        self.artist = dictionary[kCGImagePropertyTIFFArtist as String] as? String
+        self.copyright = dictionary[kCGImagePropertyTIFFCopyright as String] as? String
+        self.dateTime = dictionary[kCGImagePropertyTIFFDateTime as String] as? Date
+        self.make = dictionary[kCGImagePropertyTIFFMake as String] as? String
+        self.model = dictionary[kCGImagePropertyTIFFModel as String] as? String
+        self.software = dictionary[kCGImagePropertyTIFFSoftware as String] as? String
+        self.hostComputer = dictionary[kCGImagePropertyTIFFHostComputer as String] as? String
+    }
 }

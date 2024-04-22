@@ -11,7 +11,7 @@ import Foundation
 import ImageIO
 
 /// Exchangeable Image File Format (EXIF) data.
-public struct ExifProperty: Codable, Equatable, Hashable {
+public struct ExifProperty: Codable, Equatable, Hashable, Sendable {
     //  MARK: - Camera Settings
     
     /// For a particular camera mode, indicates the conditions for taking the picture.
@@ -36,7 +36,7 @@ public struct ExifProperty: Codable, Equatable, Hashable {
     public var spectralSensitivity: Double?
     
     /// The ISO speed ratings.
-    public var isoSpeedRatings: [AnyCodable]?
+    public var isoSpeedRatings: [Int]?
     
     /// The distance to the subject, in meters.
     public var subjectDistance: Double?
@@ -253,4 +253,83 @@ public struct ExifProperty: Codable, Equatable, Hashable {
     
     /// The EXIF version.
     public var exifVersion: [Int]?
+    
+    init?(dictionary: Any?) {
+        guard let dictionary = dictionary as? [String : Any] else { return nil }
+        self.deviceSettingDescription = dictionary[""] as? AnyCodable
+        self.fNumber = dictionary[kCGImagePropertyExifFNumber as String] as? Double
+        self.shutterSpeedValue = dictionary[kCGImagePropertyExifShutterSpeedValue as String] as? Double
+        self.apertureValue = dictionary[kCGImagePropertyExifApertureValue as String] as? Double
+        self.maxApertureValue = dictionary[kCGImagePropertyExifMaxApertureValue as String] as? Double
+        self.focalLength = dictionary[kCGImagePropertyExifFocalLength as String] as? Double
+        self.spectralSensitivity = dictionary[kCGImagePropertyExifSpectralSensitivity as String] as? Double
+        self.isoSpeedRatings = dictionary[kCGImagePropertyExifISOSpeedRatings as String] as? [Int]
+        self.subjectDistance = dictionary[kCGImagePropertyExifSubjectDistance as String] as? Double
+        self.meteringMode = dictionary[kCGImagePropertyExifMeteringMode as String] as? MeteringMode
+        self.subjectArea = dictionary[kCGImagePropertyExifSubjectArea as String] as? AnyCodable
+        self.subjectLocation = dictionary[kCGImagePropertyExifSubjectLocation as String] as? AnyCodable
+        self.sensingMethod = dictionary[kCGImagePropertyExifSensingMethod as String] as? SensingMethod
+        self.sceneType = dictionary[kCGImagePropertyExifSceneType as String] as? Int
+        self.digitalZoomRatio = dictionary[kCGImagePropertyExifDigitalZoomRatio as String] as? Double
+        self.focalLengthIn35mmFilm = dictionary[kCGImagePropertyExifFocalLenIn35mmFilm as String] as? Double
+        self.sceneCaptureType = dictionary[kCGImagePropertyExifSceneCaptureType as String] as? SceneCaptureType
+        self.subjectDistanceRange = dictionary[kCGImagePropertyExifSubjectDistRange as String] as? SubjectDistanceRangeType
+        self.exposureTime = dictionary[kCGImagePropertyExifExposureTime as String] as? TimeInterval
+        self.exposureProgram = dictionary[kCGImagePropertyExifExposureProgram as String] as? ExposureProgram
+        self.exposureIndex = dictionary[kCGImagePropertyExifExposureIndex as String] as? Int
+        self.exposureMode = dictionary[kCGImagePropertyExifExposureMode as String] as? ExposureMode
+        self.isoSpeed = dictionary[kCGImagePropertyExifISOSpeed as String] as? AnyCodable
+        self.isoSpeedLatitudeYYY = dictionary[kCGImagePropertyExifISOSpeedLatitudeyyy as String] as? AnyCodable
+        self.isoSpeedLatitudeZZZ = dictionary[kCGImagePropertyExifISOSpeedLatitudezzz as String] as? AnyCodable
+        self.recommendedExposureIndex = dictionary[kCGImagePropertyExifRecommendedExposureIndex as String] as? Int
+        self.exposureBiasValue = dictionary[kCGImagePropertyExifExposureBiasValue as String] as? Double
+        self.sensitivityType = dictionary[kCGImagePropertyExifSensitivityType as String] as? SensitivityType
+        self.standardOutputSensitivity = dictionary[kCGImagePropertyExifStandardOutputSensitivity as String] as? UInt
+        self.sourceExposureTimesOfCompositeImage = dictionary[kCGImagePropertyExifSourceExposureTimesOfCompositeImage as String] as? AnyCodable
+        self.cfaPattern = dictionary[kCGImagePropertyExifCFAPattern as String] as? AnyCodable
+        self.brightnessValue = dictionary[kCGImagePropertyExifBrightnessValue as String] as? Double
+        self.lightSource = dictionary[kCGImagePropertyExifLightSource as String] as? LightSourceType
+        self.flash = dictionary[kCGImagePropertyExifFlash as String] as? FlashMode
+        self.spatialFrequencyResponse = dictionary[kCGImagePropertyExifSpatialFrequencyResponse as String] as? String
+        self.contrast = dictionary[kCGImagePropertyExifContrast as String] as? ContrastDirection
+        self.saturation = dictionary[kCGImagePropertyExifSaturation as String] as? SaturationDirection
+        self.sharpness = dictionary[kCGImagePropertyExifSharpness as String] as? SharpnessDirection
+        self.gamma = dictionary[kCGImagePropertyExifGamma as String] as? GammaCoefficient
+        self.whiteBalance = dictionary[kCGImagePropertyExifWhiteBalance as String] as? WhiteBalanceMode
+        self.gainControl = dictionary[kCGImagePropertyExifGainControl as String] as? GainControl
+        self.imageUniqueId = dictionary[kCGImagePropertyExifImageUniqueID as String] as? String
+        self.compressedBitsPerPixel = dictionary[kCGImagePropertyExifCompressedBitsPerPixel as String] as? Double
+        self.colorSpace = dictionary[kCGImagePropertyExifColorSpace as String] as? ColorSpace
+        self.pixelXDimension = dictionary[kCGImagePropertyExifPixelXDimension as String] as? UInt
+        self.pixelYDimension = dictionary[kCGImagePropertyExifPixelYDimension as String] as? UInt
+        self.relatedSoundFile = dictionary[kCGImagePropertyExifRelatedSoundFile as String] as? String
+        self.focalPlaneXResolution = dictionary[kCGImagePropertyExifFocalPlaneXResolution as String] as? Double
+        self.focalPlaneYResolution = dictionary[kCGImagePropertyExifFocalPlaneYResolution as String] as? Double
+        self.focalPlaneResolutionUnit = dictionary[kCGImagePropertyExifFocalPlaneResolutionUnit as String] as? ResolutionUnit
+        self.customRendered = dictionary[kCGImagePropertyExifCustomRendered as String] as? CustomRenderedType
+        self.compositeImage = dictionary[kCGImagePropertyExifCompositeImage as String] as? CompositeImageType
+        self.oecf = dictionary[kCGImagePropertyExifOECF as String] as? AnyCodable
+        self.componentsConfiguration = dictionary[kCGImagePropertyExifComponentsConfiguration as String] as? [Int]
+        self.sourceImageNumberOfCompositeImage = dictionary[kCGImagePropertyExifSourceImageNumberOfCompositeImage as String] as? [Int]
+        self.fileSource = dictionary[kCGImagePropertyExifFileSource as String] as? FileSourceType
+        self.dateTimeOriginal = dictionary[kCGImagePropertyExifDateTimeOriginal as String] as? Date
+        self.dateTimeDigitized = dictionary[kCGImagePropertyExifDateTimeDigitized as String] as? Date
+        self.subsecTime = dictionary[kCGImagePropertyExifSubsecTime as String] as? String
+        self.subsecTimeOriginal = dictionary[kCGImagePropertyExifSubsecTimeOriginal as String] as? String
+        self.subsecTimeDigitized = dictionary[kCGImagePropertyExifSubsecTimeDigitized as String] as? String
+        self.offsetTime = dictionary[kCGImagePropertyExifOffsetTime as String] as? String
+        self.offsetTimeOriginal = dictionary[kCGImagePropertyExifOffsetTimeOriginal as String] as? String
+        self.offsetTimeDigitized = dictionary[kCGImagePropertyExifOffsetTimeDigitized as String] as? String
+        self.lensSpecification = dictionary[kCGImagePropertyExifLensSpecification as String] as? [Double]
+        self.lensMake = dictionary[kCGImagePropertyExifLensMake as String] as? String
+        self.lensModel = dictionary[kCGImagePropertyExifLensModel as String] as? String
+        self.lensSerialNumber = dictionary[kCGImagePropertyExifLensSerialNumber as String] as? String
+        self.makerNote = dictionary[kCGImagePropertyExifMakerNote as String] as? AnyCodable
+        self.userComment = dictionary[kCGImagePropertyExifUserComment as String] as? String
+        self.cameraOwnerName = dictionary[kCGImagePropertyExifCameraOwnerName as String] as? String
+        self.bodySerialNumber = dictionary[kCGImagePropertyExifBodySerialNumber as String] as? String
+        self.flashpixVersion = dictionary[kCGImagePropertyExifFlashPixVersion as String] as? [Int]
+        self.flashEnergy = dictionary[kCGImagePropertyExifFlashEnergy as String] as? Int
+        self.exifVersion = dictionary[kCGImagePropertyExifVersion as String] as? [Int]
+    }
 }

@@ -76,7 +76,7 @@ extension MakerAppleProperty {
             return .init(rawValueInt)
         }
         
-        private var rawValueInt: Int {
+        internal var rawValueInt: Int {
             switch self {
             case .makerNoteVersion:
                 return 0x0001

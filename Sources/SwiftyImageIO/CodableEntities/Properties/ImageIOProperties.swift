@@ -11,10 +11,8 @@ import Foundation
 import ImageIO
 
 /// Properties that apply to the container in general, and not necessarily to an individual image in the container.
-public struct ImageIOProperties: Codable, Identifiable {
-    public var id: UUID {
-        return .init()
-    }
+public struct ImageIOProperties: Codable, Identifiable, Sendable {
+    public var id: UUID = UUID()
     
     //  MARK: - Common Image Properties
     
@@ -106,4 +104,38 @@ public struct ImageIOProperties: Codable, Identifiable {
     
     /// A Lab color model, where color values contain the amount of light and the amounts of four human-perceivable colors.
     public var lab: AnyCodable?
+    
+    public init?(metadata: Any) {
+        guard let metadata = metadata as? [String : Any] else { return nil }
+        
+        self.exif = ExifProperty(dictionary: metadata[ImageIO.kCGImagePropertyExifDictionary as String])
+        self.gps = .init(dictionary: metadata[kCGImagePropertyGPSDictionary as String])
+        self.tiff = .init(dictionary: metadata[kCGImagePropertyTIFFDictionary as String])
+        self.makerApple = .init(dictionary: metadata[kCGImagePropertyMakerAppleDictionary as String])
+        
+        self.fileSize = nil
+        self.imageCount = nil
+        self.isIndexed = metadata[kCGImagePropertyIsIndexed as String] as? Bool
+        self.images = nil
+        self.thumbnailImages = nil
+        self.primaryImage = nil
+        self.isFloat = metadata[kCGImagePropertyIsFloat as String] as? Bool
+        if let orientationRawValue = metadata[ImageIO.kCGImagePropertyOrientation as String] as? UInt32 {
+            self.orientation = CGImagePropertyOrientation(rawValue: orientationRawValue)
+        }
+        self.pixelFormat = nil
+        self.pixelWidth = metadata[kCGImagePropertyPixelWidth as String] as? Int
+        self.pixelHeight = metadata[kCGImagePropertyPixelHeight as String] as? Int
+        self.dpiHeight = metadata[kCGImagePropertyDPIWidth as String] as? Int
+        self.dpiWidth = metadata[kCGImagePropertyDPIHeight as String] as? Int
+        self.depth = metadata[kCGImagePropertyDepth as String] as? Int
+        self.hasAlpha = metadata[kCGImagePropertyHasAlpha as String] as? Bool
+        self.namedColorSpace = metadata[kCGImagePropertyNamedColorSpace as String] as? AnyCodable
+        self.profileName = metadata[kCGImagePropertyProfileName as String] as? String
+        self.colorModel = metadata[kCGImagePropertyColorModel as String] as? String
+        self.rgb = nil
+        self.cmyk = nil
+        self.gray = nil
+        self.lab = nil
+    }
 }
