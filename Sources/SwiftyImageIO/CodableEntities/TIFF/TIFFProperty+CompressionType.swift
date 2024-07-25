@@ -9,7 +9,7 @@
 import Foundation
 
 public extension TIFFProperty {
-    enum CompressionType: Int, Codable, Hashable {
+    enum CompressionType: Int, Codable, Hashable, Sendable {
         case uncompressed = 1
         case ccitt1D = 2
         case t4Group3Fax = 3

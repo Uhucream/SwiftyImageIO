@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 
 public extension MakerAppleProperty {
-    struct RunTimeInformation: Codable, Identifiable {
+    struct RunTimeInformation: Codable, Identifiable, Sendable {
         public var id: UUID {
             return .init()
         }

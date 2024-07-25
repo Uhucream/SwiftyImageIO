@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum LongitudeRef: String, Codable {
+    enum LongitudeRef: String, Codable, Sendable {
         case east = "E"
         case west = "W"
     }

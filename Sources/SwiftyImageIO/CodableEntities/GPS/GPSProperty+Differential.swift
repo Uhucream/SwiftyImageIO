@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum Differential: UInt16, Codable {
+    enum Differential: UInt16, Codable, Sendable {
         case noCorrection = 0
         case corrected = 1
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum CompositeImageType: Int, Codable, Hashable {
+    enum CompositeImageType: Int, Codable, Hashable, Sendable {
         case unknown = 0
         case notCompositeImage = 1
         case generalCompositeImage = 2

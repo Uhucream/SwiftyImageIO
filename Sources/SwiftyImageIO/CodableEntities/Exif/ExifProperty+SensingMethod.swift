@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum SensingMethod: Int, Codable, Hashable {
+    enum SensingMethod: Int, Codable, Hashable, Sendable {
         case notDefined = 1
         case oneChipColorAreaSensor = 2
         case twoChipColorAreaSensor = 3

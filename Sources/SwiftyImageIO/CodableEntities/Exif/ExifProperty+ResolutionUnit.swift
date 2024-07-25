@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum ResolutionUnit: Int, Codable, Hashable {
+    enum ResolutionUnit: Int, Codable, Hashable, Sendable {
         case none = 1
         case inches = 2
         case cm = 3

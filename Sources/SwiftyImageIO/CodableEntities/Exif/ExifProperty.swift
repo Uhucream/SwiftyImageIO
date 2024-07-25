@@ -6,7 +6,7 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 import ImageIO
 

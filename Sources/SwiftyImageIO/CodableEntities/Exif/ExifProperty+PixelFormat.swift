@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum PixelFormatType: Int, Codable {
+    enum PixelFormatType: Int, Codable, Sendable {
         case blackWhite = 0x5
         
         case _8BitGray = 0x8

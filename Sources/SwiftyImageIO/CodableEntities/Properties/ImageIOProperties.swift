@@ -6,7 +6,7 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 import ImageIO
 
@@ -105,9 +105,14 @@ public struct ImageIOProperties: Codable, Identifiable, Sendable {
     /// A Lab color model, where color values contain the amount of light and the amounts of four human-perceivable colors.
     public var lab: AnyCodable?
     
-    public init?(metadata: Any) {
-        guard let metadata = metadata as? [String : Any] else { return nil }
-        
+    public init?(metadata: CFDictionary) {
+        guard let metadata = metadata as? [String : Any] else {
+            return nil
+        }
+        self.init(metadata: metadata)
+    }
+    
+    public init(metadata: [String : Any]) {
         self.exif = ExifProperty(dictionary: metadata[ImageIO.kCGImagePropertyExifDictionary as String])
         self.gps = .init(dictionary: metadata[kCGImagePropertyGPSDictionary as String])
         self.tiff = .init(dictionary: metadata[kCGImagePropertyTIFFDictionary as String])

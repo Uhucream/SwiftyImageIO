@@ -8,10 +8,10 @@
 
 import Foundation
 import ImageIO
-import AnyCodable
+@preconcurrency import AnyCodable
 
 /// Metadata for an image from an Apple camera.
-public struct MakerAppleProperty: Codable, Identifiable {
+public struct MakerAppleProperty: Codable, Identifiable, Sendable {
     public var id: UUID = UUID()
     
     public let makerNoteVersion: Int?

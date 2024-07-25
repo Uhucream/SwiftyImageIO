@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum SpeedUnit: String, Codable {
+    enum SpeedUnit: String, Codable, Sendable {
         case kilometerPerHour = "K"
         case milePerHour = "M"
         case knots = "N"

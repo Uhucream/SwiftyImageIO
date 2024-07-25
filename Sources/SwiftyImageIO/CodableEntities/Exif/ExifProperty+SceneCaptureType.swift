@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum SceneCaptureType: Int, Codable, Hashable {
+    enum SceneCaptureType: Int, Codable, Hashable, Sendable {
         case standard = 0
         case landscape = 1
         case portrait = 2

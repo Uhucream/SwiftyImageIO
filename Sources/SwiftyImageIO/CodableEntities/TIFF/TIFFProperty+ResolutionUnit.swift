@@ -9,7 +9,7 @@
 import Foundation
 
 public extension TIFFProperty {
-    enum ResolutionUnit: Int, Codable {
+    enum ResolutionUnit: Int, Codable, Sendable {
         case none = 1
         case inch = 2
         case centimeter = 3

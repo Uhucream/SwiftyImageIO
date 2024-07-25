@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum GainControl: Int, Codable, Hashable {
+    enum GainControl: Int, Codable, Hashable, Sendable {
         case none = 0
         case lowGainUp = 1
         case highGainUp = 2
