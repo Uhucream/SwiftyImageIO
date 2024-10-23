@@ -8,7 +8,7 @@
 
 import ImageIO
 
-extension CGImagePropertyOrientation: CustomStringConvertible {
+extension CGImagePropertyOrientation: @retroactive CustomStringConvertible {
     public var description: String {        
         switch self {
         case .up:
