@@ -29,10 +29,10 @@ guard var imageProperties: [String: Any] = testCIImage?.properties else { return
 // Get dictionary of exif
 var exifDictionary: [String: Any]? = imageProperties[kCGImagePropertyExifDictionary as String] as? [String: Any]
 
-// modify dictionary of exif
+// modify dictionary of exif with using pre-defined constant
 exifDictionary?[kCGImagePropertyExifDateTimeDigitized as String] = DateFormatter.tiff.date(from: .now)
 
-// modify dictionary which is parent dictionary of exif
+// modify dictionary which is parent dictionary of exif with using pre-defined constant
 imageProperties[kCGImagePropertyExifDictionary as String] = exifDictionary
 
 // Generate a new CIImage which exif is modified
