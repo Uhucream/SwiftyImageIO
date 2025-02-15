@@ -41,7 +41,7 @@ let metadataModifiedCIImage: CIImage = testCIImage?.settingProperties(imagePrope
 
 It's annoying.
 
-This library solves this annoying amount process for modifying exif.
+This library solves this annoying amount processes for modifying exif.
 
 
 ## Usage
