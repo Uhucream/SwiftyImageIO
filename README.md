@@ -57,3 +57,7 @@ imageProperties.exif?.dateTimeDigitized = .now
 
 let metadataModifiedCIImage: CIImage? = try? testCIImage?.settingProperties(imageProperties)
 ```
+
+That's it!
+
+
