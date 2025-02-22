@@ -95,9 +95,7 @@ public struct TIFFProperty: Codable, Equatable, Hashable, Sendable {
         self.artist = dictionary[kCGImagePropertyTIFFArtist as String] as? String
         self.copyright = dictionary[kCGImagePropertyTIFFCopyright as String] as? String
         if let dateTimeString = dictionary[kCGImagePropertyTIFFDateTime as String] as? String {
-//            print("dateTimeString", dateTimeString)
             self.dateTime = DateFormatter.tiff.date(from: dateTimeString)
-//            print("self.dateTime", self.dateTime)
         }
         self.make = dictionary[kCGImagePropertyTIFFMake as String] as? String
         self.model = dictionary[kCGImagePropertyTIFFModel as String] as? String
@@ -105,14 +103,3 @@ public struct TIFFProperty: Codable, Equatable, Hashable, Sendable {
         self.hostComputer = dictionary[kCGImagePropertyTIFFHostComputer as String] as? String
     }
 }
-//func dateFromColonString(_ dateString: String) -> Date? {
-//    let dateFormatter = DateFormatter()
-//    // 设置日期格式，这里的格式需要与传入的字符串完全匹配
-//    dateFormatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
-//    // 设置时区，这里假设是UTC，具体根据你的需要可能需要调整
-//    dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-//    // 设置区域，确保无论设备在何地区，解析行为一致
-//    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-//    // 尝试将字符串转换为Date对象
-//    return dateFormatter.date(from: dateString)
-//}
