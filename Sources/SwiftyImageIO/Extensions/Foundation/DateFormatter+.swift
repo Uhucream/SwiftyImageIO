@@ -12,9 +12,8 @@ extension DateFormatter {
     static var tiff: DateFormatter {
         let formatter: DateFormatter = .init()
         
+        formatter.locale = NSLocale.system
         formatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.locale = NSLocale.system //Locale(identifier: "en_US_POSIX")
         
         return formatter
     }
