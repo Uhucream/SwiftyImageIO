@@ -8,7 +8,6 @@
 
 @preconcurrency import AnyCodable
 import Foundation
-import ImageIO
 
 /// Global Positioning System (GPS) information.
 public struct GPSProperty: Codable, Equatable, Hashable, Sendable {
@@ -119,41 +118,4 @@ public struct GPSProperty: Codable, Equatable, Hashable, Sendable {
     
     /// The GPS version information.
     public var gpsVersion: AnyCodable?
-    
-    init?(dictionary: Any?) {
-        guard let dictionary = dictionary as? [String : Any] else { return nil }
-        
-        self.latitude = dictionary[kCGImagePropertyGPSLatitude as String] as? Double
-        self.longitude = dictionary[kCGImagePropertyGPSLongitude as String] as? Double
-        self.altitude = dictionary[kCGImagePropertyGPSAltitude as String] as? Double
-        self.latitudeRef = dictionary[kCGImagePropertyGPSLatitudeRef as String] as? LatitudeRef
-        self.longitudeRef = dictionary[kCGImagePropertyGPSLongitudeRef as String] as? LongitudeRef
-        self.altitudeRef = dictionary[kCGImagePropertyGPSAltitudeRef as String] as? AltitudeRef
-        self.hPositioningError = dictionary[kCGImagePropertyGPSHPositioningError as String] as? Double
-        self.destinationLatitude = dictionary[kCGImagePropertyGPSDestLatitude as String] as? Double
-        self.destinationLongitude = dictionary[kCGImagePropertyGPSDestLongitude as String] as? Double
-        self.destinationBearing = dictionary[kCGImagePropertyGPSDestBearing as String] as? Double
-        self.destinationDistance = dictionary[kCGImagePropertyGPSDestDistance as String] as? Double
-        self.destinationLatitudeRef = dictionary[kCGImagePropertyGPSDestLatitudeRef as String] as? LatitudeRef
-        self.destinationLongitudeRef = dictionary[kCGImagePropertyGPSDestLongitudeRef as String] as? LongitudeRef
-        self.destinationBearingRef = dictionary[kCGImagePropertyGPSDestBearingRef as String] as? BearingRef
-        self.destinationDistanceRef = dictionary[kCGImagePropertyGPSDestDistanceRef as String] as? DistanceLengthUnit
-        self.imageDirectionRef = dictionary[kCGImagePropertyGPSImgDirectionRef as String] as? DirectionRef
-        self.imageDirection = dictionary[kCGImagePropertyGPSImgDirection as String] as? Double
-        self.status = dictionary[kCGImagePropertyGPSStatus as String] as? Status
-        self.satellites = dictionary[kCGImagePropertyGPSSatellites as String] as? String
-        self.measureMode = dictionary[kCGImagePropertyGPSMeasureMode as String] as? MeasureMode
-        self.dop = dictionary[kCGImagePropertyGPSDOP as String] as? Double
-        self.speedRef = dictionary[kCGImagePropertyGPSSpeedRef as String] as? SpeedUnit
-        self.speed = dictionary[kCGImagePropertyGPSSpeed as String] as? Double
-        self.trackRef = dictionary[kCGImagePropertyGPSTrackRef as String] as? TrackRef
-        self.track = dictionary[kCGImagePropertyGPSTrack as String] as? Double
-        self.mapDatum = dictionary[kCGImagePropertyGPSMapDatum as String] as? String
-        self.processingMethod = dictionary[kCGImagePropertyGPSProcessingMethod as String] as? AnyCodable
-        self.areaInformation = dictionary[kCGImagePropertyGPSAreaInformation as String] as? AnyCodable
-        self.differential = dictionary[kCGImagePropertyGPSDifferental as String] as? Differential
-        self.timeStamp = dictionary[kCGImagePropertyGPSTimeStamp as String] as? String
-        self.dateStamp = dictionary[kCGImagePropertyGPSDateStamp as String] as? String
-        self.gpsVersion = dictionary[kCGImagePropertyGPSVersion as String] as? AnyCodable
-    }
 }
