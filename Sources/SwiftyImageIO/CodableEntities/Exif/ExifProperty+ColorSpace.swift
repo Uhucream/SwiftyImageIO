@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum ColorSpace: Int, Codable, Hashable {
+    enum ColorSpace: Int, Codable, Hashable, Sendable {
         case sRGB = 0x1
         case adobeRGB = 0x2
         case wideGamutRGB = 0xfffd

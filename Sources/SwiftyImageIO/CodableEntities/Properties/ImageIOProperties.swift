@@ -6,12 +6,12 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 import ImageIO
 
 /// Properties that apply to the container in general, and not necessarily to an individual image in the container.
-public struct ImageIOProperties: Codable, Identifiable {
+public struct ImageIOProperties: Codable, Identifiable, Sendable {
     public var id: UUID {
         return .init()
     }

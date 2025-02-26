@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum MeteringMode: Int, Codable, Hashable {
+    enum MeteringMode: Int, Codable, Hashable, Sendable {
         case unknown = 0
         case average = 1
         case centerWeightedAverage = 2

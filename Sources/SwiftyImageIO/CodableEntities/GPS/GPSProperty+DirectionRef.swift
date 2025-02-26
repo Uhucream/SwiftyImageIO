@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum DirectionRef: String, Codable {
+    enum DirectionRef: String, Codable, Sendable {
         case magneticNorth = "M"
         case trueNorth = "T"
     }

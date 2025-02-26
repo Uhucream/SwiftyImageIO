@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum ContrastDirection: Int, Codable, Hashable {
+    enum ContrastDirection: Int, Codable, Hashable, Sendable {
         case normal = 0
         case soft = 1
         case hard = 2

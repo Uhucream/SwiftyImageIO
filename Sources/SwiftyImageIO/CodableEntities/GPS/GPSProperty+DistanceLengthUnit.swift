@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum DistanceLengthUnit: String, Codable {
+    enum DistanceLengthUnit: String, Codable, Sendable {
         case kilometers = "K"
         case miles = "M"
         case nauticalMiles = "N"

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum LatitudeRef: String, Codable {
+    enum LatitudeRef: String, Codable, Sendable{
         case north = "N"
         case south = "S"
     }

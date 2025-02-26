@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum LightSourceType: Int, Codable, Hashable {
+    enum LightSourceType: Int, Codable, Hashable, Sendable {
         case unknown = 0
         case daylight = 1
         case fluorescent = 2

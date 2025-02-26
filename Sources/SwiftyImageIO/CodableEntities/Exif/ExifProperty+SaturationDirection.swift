@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum SaturationDirection: Int, Codable, Hashable {
+    enum SaturationDirection: Int, Codable, Hashable, Sendable {
         case normal = 0
         case lowSaturation = 1
         case highSaturation = 2

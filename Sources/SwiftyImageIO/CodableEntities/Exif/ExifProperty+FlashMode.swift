@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum FlashMode: Int, Codable, Hashable {
+    enum FlashMode: Int, Codable, Hashable, Sendable {
         case noFlash = 0x0
         case fired = 0x1
         case firedReturnNotDetected = 0x5

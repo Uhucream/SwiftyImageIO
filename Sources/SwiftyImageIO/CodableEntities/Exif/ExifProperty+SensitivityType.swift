@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum SensitivityType: Int, Codable, Hashable {
+    enum SensitivityType: Int, Codable, Hashable, Sendable {
         case unknown = 0
         case standardOutputSensitivity = 1
         case recommendedExposureIndex = 2

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum WhiteBalanceMode: Int, Codable, Hashable {
+    enum WhiteBalanceMode: Int, Codable, Hashable, Sendable {
         case autoWhiteBalance = 0
         case manualWhiteBalance = 1
     }

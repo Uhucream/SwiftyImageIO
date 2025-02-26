@@ -6,11 +6,11 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 
 /// Global Positioning System (GPS) information.
-public struct GPSProperty: Codable, Equatable, Hashable {
+public struct GPSProperty: Codable, Equatable, Hashable, Sendable {
     //  MARK: - GPS Coordinate
     
     /// The latitude.

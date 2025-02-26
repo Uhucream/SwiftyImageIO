@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum SubjectDistanceRangeType: Int, Codable, Hashable {
+    enum SubjectDistanceRangeType: Int, Codable, Hashable, Sendable {
         case unknown = 0
         case macro = 1
         case closeView = 2

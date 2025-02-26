@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum ExposureMode: Int, Codable, Hashable {
+    enum ExposureMode: Int, Codable, Hashable, Sendable {
         case autoExposure = 0
         case manualExposure = 1
         case autoBracket = 2

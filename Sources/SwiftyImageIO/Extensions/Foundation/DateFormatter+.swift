@@ -13,7 +13,7 @@ extension DateFormatter {
         let formatter: DateFormatter = .init()
         
         formatter.locale = NSLocale.system
-        formatter.dateFormat =  "yyyy:MM:dd HH:mm:ss"
+        formatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
         
         return formatter
     }

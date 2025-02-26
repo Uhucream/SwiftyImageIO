@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum CustomRenderedType: Int, Codable, Hashable {
+    enum CustomRenderedType: Int, Codable, Hashable, Sendable {
         //  MARK: - standard Exif
         case normal = 0
         case custom = 1

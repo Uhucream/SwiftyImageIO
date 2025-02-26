@@ -6,12 +6,12 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 import ImageIO
 
 /// Exchangeable Image File Format (EXIF) data.
-public struct ExifProperty: Codable, Equatable, Hashable {
+public struct ExifProperty: Codable, Equatable, Hashable, Sendable {
     //  MARK: - Camera Settings
     
     /// For a particular camera mode, indicates the conditions for taking the picture.

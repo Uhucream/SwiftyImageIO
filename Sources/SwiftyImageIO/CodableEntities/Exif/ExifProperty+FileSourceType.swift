@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum FileSourceType: Int, Codable, Hashable {
+    enum FileSourceType: Int, Codable, Hashable, Sendable {
         case filmScanner = 1
         case reflectionPrintScanner = 2
         case digitalCamera = 3

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension ExifProperty {
-    enum ExposureProgram: Int, Codable, Hashable {
+    enum ExposureProgram: Int, Codable, Hashable, Sendable {
         case notDefined = 0
         case manual = 1
         case normalProgram = 2

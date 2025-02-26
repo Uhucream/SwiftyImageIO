@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum Status: String, Codable {
+    enum Status: String, Codable, Sendable {
         case measurementActive = "A"
         case measurementVoid = "V"
     }

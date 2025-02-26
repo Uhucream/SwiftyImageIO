@@ -6,12 +6,12 @@
 //  
 //
 
-import AnyCodable
+@preconcurrency import AnyCodable
 import Foundation
 import ImageIO
 
 /// the Tagged Image File Format (TIFF).
-public struct TIFFProperty: Codable, Equatable, Hashable {
+public struct TIFFProperty: Codable, Equatable, Hashable, Sendable {
     //  MARK: - Image Quality
     
     /// The compression scheme used on the image data.

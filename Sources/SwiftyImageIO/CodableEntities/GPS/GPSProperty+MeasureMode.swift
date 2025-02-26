@@ -9,7 +9,7 @@
 import Foundation
 
 public extension GPSProperty {
-    enum MeasureMode: Int, Codable {
+    enum MeasureMode: Int, Codable, Sendable {
         case twoDimensionalMeasurement = 2
         case threeDimensionalMeasurement = 3
     }
